@@ -1,0 +1,1173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PJ Eident — Mechanical Engineer & AI Builder</title>
+<meta name="description" content="Mechanical engineer and AI automation builder based in Chicago, IL. Hands-on experience in product development, manufacturing, and test systems. Founder of Solvaro AI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --black: #0a0a0a;
+  --white: #ffffff;
+  --off: #f4f4f0;
+  --accent: #FF3300;
+  --blue: #1a3aff;
+  --muted: #666;
+  --border: 1.5px solid #0a0a0a;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--white);
+  color: var(--black);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  border-bottom: var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  height: 56px;
+}
+
+.nav-mark {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  color: var(--black);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+}
+
+.nav-mark span { color: var(--accent); }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: color 0.15s;
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+.nav-cta {
+  background: var(--black) !important;
+  color: var(--white) !important;
+  padding: 8px 18px !important;
+}
+
+.nav-cta:hover { background: var(--accent) !important; color: var(--white) !important; }
+
+/* ── HERO ── */
+.hero {
+  border-bottom: var(--border);
+  padding: 0 40px;
+  background: var(--off);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 0;
+  min-height: 520px;
+}
+
+.hero-left {
+  padding: 80px 48px 80px 0;
+  border-right: var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 24px;
+  border: var(--border);
+  padding: 6px 12px;
+  width: fit-content;
+  background: var(--white);
+}
+
+.hero-badge-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+h1 {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 88px;
+  line-height: 0.92;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+h1 .accent { color: var(--accent); }
+
+.hero-sub {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--muted);
+  max-width: 500px;
+  margin-bottom: 36px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--black);
+  color: var(--white);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 24px;
+  transition: background 0.15s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover { background: var(--accent); }
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--black);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 24px;
+  border: var(--border);
+  transition: background 0.15s, color 0.15s;
+}
+
+.btn-secondary:hover { background: var(--black); color: var(--white); }
+
+/* ── HERO RIGHT ── */
+.hero-right {
+  padding: 48px 0 48px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.stat-block {
+  background: var(--white);
+  border: var(--border);
+  padding: 24px 28px;
+}
+
+.stat-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.stat-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  line-height: 1;
+}
+
+.stat-value.accent { color: var(--accent); }
+
+/* ── DUAL TRACK BAR ── */
+.track-bar {
+  border-bottom: var(--border);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.track {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.track:first-child { border-right: var(--border); }
+
+.track-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--muted);
+}
+
+.track-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 36px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.track-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 420px;
+}
+
+.track-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.pill {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border: 1.5px solid #ddd;
+  color: var(--muted);
+}
+
+.pill.eng { border-color: var(--black); color: var(--black); }
+.pill.ai  { border-color: var(--accent); color: var(--accent); }
+
+/* ── SECTIONS ── */
+.section-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
+}
+
+.section-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 60px;
+  line-height: 0.95;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  margin-bottom: 16px;
+}
+
+.section-sub {
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--muted);
+  max-width: 540px;
+  margin-bottom: 52px;
+}
+
+/* ── PROJECTS ── */
+.projects { border-bottom: var(--border); }
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: var(--border);
+}
+
+.project-card {
+  padding: 36px 32px;
+  border-right: var(--border);
+  border-bottom: var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: background 0.15s;
+}
+
+.project-card:hover { background: var(--off); }
+
+.project-card:nth-child(3n) { border-right: none; }
+.project-card:nth-child(4),
+.project-card:nth-child(5),
+.project-card:nth-child(6) { border-bottom: none; }
+
+.project-tag {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 10px;
+  width: fit-content;
+}
+
+.project-tag.eng { background: var(--black); color: var(--white); }
+.project-tag.ai  { background: var(--accent); color: var(--white); }
+.project-tag.live { background: var(--accent); color: var(--white); }
+
+.project-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 28px;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.project-org {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.project-desc {
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+  flex: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.tech-tag {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  padding: 3px 8px;
+  border: 1px solid #ddd;
+  color: var(--muted);
+  text-transform: uppercase;
+}
+
+.project-link {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  text-decoration: none;
+  margin-top: 4px;
+  transition: opacity 0.15s;
+}
+
+.project-link:hover { opacity: 0.7; }
+
+/* ── SKILLS ── */
+.skills { border-bottom: var(--border); background: var(--black); color: var(--white); }
+.skills .section-title { color: var(--white); }
+.skills .section-sub { color: #666; }
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid #222;
+}
+
+.skills-col {
+  padding: 44px 40px;
+  border-right: 1px solid #222;
+}
+
+.skills-col:last-child { border-right: none; }
+
+.skills-col-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.skill-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #1a1a1a;
+}
+
+.skill-row:last-child { border-bottom: none; }
+
+.skill-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ccc;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.skill-bar {
+  display: flex;
+  gap: 3px;
+}
+
+.skill-pip {
+  width: 18px;
+  height: 4px;
+  background: #222;
+}
+
+.skill-pip.filled { background: var(--accent); }
+
+/* ── SOLVARO FEATURE ── */
+.solvaro-feature {
+  border-bottom: var(--border);
+}
+
+.solvaro-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 480px;
+}
+
+.solvaro-left {
+  background: var(--accent);
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-right: var(--border);
+}
+
+.solvaro-left .section-label { color: rgba(255,255,255,0.65); }
+.solvaro-left .section-title { color: var(--white); font-size: 52px; margin-bottom: 16px; }
+.solvaro-left p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.7; margin-bottom: 32px; max-width: 400px; }
+
+.btn-white {
+  display: inline-block;
+  background: var(--white);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 24px;
+  border: none;
+  transition: background 0.15s, color 0.15s;
+  width: fit-content;
+}
+
+.btn-white:hover { background: var(--black); color: var(--white); }
+
+.solvaro-right {
+  padding: 80px 60px;
+  background: var(--off);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 24px;
+}
+
+.solvaro-demo-link {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 20px 24px;
+  background: var(--white);
+  border: var(--border);
+  text-decoration: none;
+  color: var(--black);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.solvaro-demo-link:hover { border-color: var(--accent); background: #fff8f7; }
+
+.sdl-num {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 24px;
+  color: var(--accent);
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.sdl-info { display: flex; flex-direction: column; gap: 4px; }
+
+.sdl-title {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.sdl-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.sdl-arrow {
+  margin-left: auto;
+  font-size: 16px;
+  color: var(--accent);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ── CONTACT ── */
+.contact { border-bottom: var(--border); }
+
+.contact-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 360px;
+}
+
+.contact-left {
+  padding: 72px 60px 72px 40px;
+  border-right: var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-right {
+  padding: 72px 40px 72px 60px;
+  background: var(--off);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 16px;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-decoration: none;
+  color: var(--black);
+  padding: 18px 20px;
+  border: var(--border);
+  background: var(--white);
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.contact-link:hover { border-color: var(--accent); background: #fff8f7; }
+
+.cl-label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cl-value {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.cl-arrow {
+  margin-left: auto;
+  color: var(--accent);
+  font-size: 18px;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--black);
+  padding: 32px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: 20px;
+  color: var(--white);
+  letter-spacing: 0.04em;
+}
+
+.footer-name span { color: var(--accent); }
+
+.footer-links {
+  display: flex;
+  gap: 28px;
+  list-style: none;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #555;
+  transition: color 0.15s;
+}
+
+.footer-links a:hover { color: var(--accent); }
+
+.footer-copy {
+  font-size: 11px;
+  color: #333;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  h1 { font-size: 68px; }
+  .section-title { font-size: 48px; }
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-left { border-right: none; border-bottom: var(--border); padding: 56px 0; }
+  .hero-right { padding: 40px 0; flex-direction: row; flex-wrap: wrap; }
+  .stat-block { flex: 1; min-width: 160px; }
+  .track-bar { grid-template-columns: 1fr; }
+  .track:first-child { border-right: none; border-bottom: var(--border); }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); }
+  .project-card:nth-child(3n) { border-right: var(--border); }
+  .project-card:nth-child(2n) { border-right: none; }
+  .project-card:nth-child(4),
+  .project-card:nth-child(5),
+  .project-card:nth-child(6) { border-bottom: var(--border); }
+  .project-card:nth-child(5),
+  .project-card:nth-child(6) { border-bottom: none; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .skills-col { border-right: none; border-bottom: 1px solid #222; }
+  .skills-col:last-child { border-bottom: none; }
+  .solvaro-inner { grid-template-columns: 1fr; }
+  .solvaro-left { border-right: none; border-bottom: var(--border); }
+  .contact-inner { grid-template-columns: 1fr; }
+  .contact-left { border-right: none; border-bottom: var(--border); }
+}
+
+@media (max-width: 768px) {
+  nav { padding: 0 20px; }
+  .nav-links { gap: 16px; }
+  .hero { padding: 0 20px; }
+  h1 { font-size: 52px; }
+  .section-inner { padding: 60px 20px; }
+  .section-title { font-size: 40px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card { border-right: none !important; border-bottom: var(--border) !important; }
+  .project-card:last-child { border-bottom: none !important; }
+  .solvaro-left { padding: 56px 28px; }
+  .solvaro-right { padding: 40px 28px; }
+  .contact-left { padding: 56px 20px; }
+  .contact-right { padding: 40px 20px; }
+  footer { flex-direction: column; gap: 16px; text-align: center; }
+  .footer-links { flex-wrap: wrap; justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-mark">PJ<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#solvaro">Solvaro AI</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-left">
+      <div class="hero-badge">
+        <div class="hero-badge-dot"></div>
+        Chicago Area · Open to Work
+      </div>
+      <h1>
+        PJ<br>
+        <span class="accent">Eident</span>
+      </h1>
+      <p class="hero-sub">
+        Mechanical engineer with hands-on experience in product development, manufacturing, and test systems — now also building AI automation tools from scratch. Based in the Chicago area.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="btn-primary">See My Work →</a>
+        <a href="mailto:pj@eident.net" class="btn-secondary">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="stat-block">
+        <div class="stat-label">Background</div>
+        <div class="stat-value">Mechanical<br>Engineering</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Currently Building</div>
+        <div class="stat-value accent">AI Automation<br>Tools</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-label">Location</div>
+        <div class="stat-value" style="font-size:22px;">Chicago, IL</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DUAL TRACK -->
+<div class="track-bar">
+  <div class="track">
+    <div class="track-label">Track 01 — Engineering</div>
+    <div class="track-title">Product &amp;<br>Manufacturing</div>
+    <p class="track-desc">Hands-on with CAD, prototyping, test systems, and manufacturing processes. Experience across industries from flooring to aerospace-adjacent instrumentation.</p>
+    <div class="track-pills">
+      <span class="pill eng">SolidWorks</span>
+      <span class="pill eng">AutoCAD</span>
+      <span class="pill eng">GD&T</span>
+      <span class="pill eng">3D Printing</span>
+      <span class="pill eng">DAQ Systems</span>
+      <span class="pill eng">Test & Validation</span>
+    </div>
+  </div>
+  <div class="track">
+    <div class="track-label">Track 02 — AI & Automation</div>
+    <div class="track-title">Custom AI<br>Agents</div>
+    <p class="track-desc">Building real AI automation tools using Claude Code and the Anthropic API — not drag-and-drop templates. Deployed and live. Founder of Solvaro AI.</p>
+    <div class="track-pills">
+      <span class="pill ai">Claude API</span>
+      <span class="pill ai">Node.js</span>
+      <span class="pill ai">Python</span>
+      <span class="pill ai">n8n</span>
+      <span class="pill ai">Docker</span>
+      <span class="pill ai">Railway</span>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section class="projects" id="projects">
+  <div class="section-inner">
+    <div class="section-label">Selected Work</div>
+    <h2 class="section-title">Engineering +<br>AI Projects</h2>
+    <p class="section-sub">A mix of mechanical engineering work and custom-built AI tools — all real, all deployed or delivered.</p>
+
+    <div class="projects-grid">
+
+      <!-- AI: Lead Responder -->
+      <div class="project-card">
+        <span class="project-tag live">Live Demo</span>
+        <div class="project-title">AI Lead Responder</div>
+        <div class="project-org">Solvaro AI</div>
+        <p class="project-desc">A web server that catches inbound form leads and fires a personalized AI-written reply within 60 seconds — 24/7, no manual steps. Built with Claude and deployed on Railway.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Claude API</span>
+          <span class="tech-tag">Resend</span>
+          <span class="tech-tag">Railway</span>
+        </div>
+        <a href="https://eident-lead-responder-production.up.railway.app/test" target="_blank" class="project-link">Try It Live →</a>
+      </div>
+
+      <!-- AI: Doc Generator -->
+      <div class="project-card">
+        <span class="project-tag live">Live Demo</span>
+        <div class="project-title">AI Doc Generator</div>
+        <div class="project-org">Solvaro AI</div>
+        <p class="project-desc">Fill out a short intake form, get a complete formatted proposal PDF in your inbox in under 30 seconds. Claude generates the content; PDFKit formats and emails it automatically.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Claude API</span>
+          <span class="tech-tag">PDFKit</span>
+          <span class="tech-tag">Railway</span>
+        </div>
+        <a href="https://solvaro-doc-generator-production.up.railway.app/test" target="_blank" class="project-link">Try It Live →</a>
+      </div>
+
+      <!-- AI: Email Agent -->
+      <div class="project-card">
+        <span class="project-tag live">Live Demo</span>
+        <div class="project-title">AI Email Agent</div>
+        <div class="project-org">Solvaro AI</div>
+        <p class="project-desc">A two-step AI pipeline: Claude first classifies an inbound email (new lead, support, urgent, junk), then drafts and sends the right reply — different tone, CTA, and length per category.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Node.js</span>
+          <span class="tech-tag">Claude API</span>
+          <span class="tech-tag">Resend</span>
+          <span class="tech-tag">Docker</span>
+        </div>
+        <a href="https://solvaro-email-agent2-production.up.railway.app/test" target="_blank" class="project-link">Try It Live →</a>
+      </div>
+
+      <!-- ENG: Capstone DAQ -->
+      <div class="project-card">
+        <span class="project-tag eng">Engineering</span>
+        <div class="project-title">DAQ Sensor System</div>
+        <div class="project-org">Capstone Project</div>
+        <p class="project-desc">Senior capstone engineering project designing a data acquisition system with a custom-built 3D printed sensor enclosure — balancing thermal management, cable routing, and fieldwork durability.</p>
+        <div class="project-tech">
+          <span class="tech-tag">CAD</span>
+          <span class="tech-tag">3D Printing</span>
+          <span class="tech-tag">Data Acquisition</span>
+          <span class="tech-tag">Sensors</span>
+        </div>
+      </div>
+
+      <!-- ENG: Horner Flooring -->
+      <div class="project-card">
+        <span class="project-tag eng">Engineering</span>
+        <div class="project-title">Portable Flooring Prototype</div>
+        <div class="project-org">Horner Flooring</div>
+        <p class="project-desc">Designed and 3D printed functional prototype joints and hardware for a modular portable flooring system — iterating rapidly on geometry, fit, and load-bearing requirements before tooling investment.</p>
+        <div class="project-tech">
+          <span class="tech-tag">SolidWorks</span>
+          <span class="tech-tag">FDM Printing</span>
+          <span class="tech-tag">Prototyping</span>
+          <span class="tech-tag">Product Dev</span>
+        </div>
+      </div>
+
+      <!-- ENG: Astro Tracker -->
+      <div class="project-card">
+        <span class="project-tag eng">Personal Project</span>
+        <div class="project-title">Astro Tracker Mount</div>
+        <div class="project-org">Personal Build</div>
+        <p class="project-desc">Designed and printed a custom equatorial tracker mount for astrophotography — precise enough to compensate for Earth's rotation during long-exposure imaging. Full mechanical design from scratch.</p>
+        <div class="project-tech">
+          <span class="tech-tag">CAD</span>
+          <span class="tech-tag">FDM Printing</span>
+          <span class="tech-tag">Cura</span>
+          <span class="tech-tag">Bambu Studio</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills" id="skills">
+  <div class="section-inner">
+    <div class="section-label">Technical Skills</div>
+    <h2 class="section-title">What I work<br>with</h2>
+    <p class="section-sub">Two distinct skill sets that complement each other — engineering fundamentals and AI/code tooling.</p>
+
+    <div class="skills-grid">
+      <div class="skills-col">
+        <div class="skills-col-label">Engineering</div>
+
+        <div class="skill-row">
+          <span class="skill-name">SolidWorks / CAD</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">3D Printing (FDM)</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">GD&T / Tolerancing</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Test &amp; Validation</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">DAQ Systems</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Manufacturing Processes</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">MATLAB / Python</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-col">
+        <div class="skills-col-label">AI &amp; Software</div>
+
+        <div class="skill-row">
+          <span class="skill-name">Anthropic / Claude API</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Node.js</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Python</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Docker</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">n8n / Make.com</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">Railway / Vercel</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+        <div class="skill-row">
+          <span class="skill-name">GitHub</span>
+          <div class="skill-bar">
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip filled"></div>
+            <div class="skill-pip"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLVARO FEATURE -->
+<section class="solvaro-feature" id="solvaro">
+  <div class="solvaro-inner">
+    <div class="solvaro-left">
+      <div class="section-label">My Business</div>
+      <h2 class="section-title">Solvaro AI</h2>
+      <p>I build custom AI automations for small businesses — lead follow-up, document generation, email agents, and more. Built with Claude Code and deployed live.</p>
+      <a href="https://eident-automation-website.vercel.app" target="_blank" class="btn-white">Visit Solvaro AI →</a>
+    </div>
+    <div class="solvaro-right">
+      <a href="https://eident-lead-responder-production.up.railway.app/test" target="_blank" class="solvaro-demo-link">
+        <div class="sdl-num">01</div>
+        <div class="sdl-info">
+          <div class="sdl-title">AI Lead Responder</div>
+          <div class="sdl-desc">Personalized reply to any inbound lead in under 60 seconds</div>
+        </div>
+        <div class="sdl-arrow">→</div>
+      </a>
+      <a href="https://solvaro-doc-generator-production.up.railway.app/test" target="_blank" class="solvaro-demo-link">
+        <div class="sdl-num">02</div>
+        <div class="sdl-info">
+          <div class="sdl-title">AI Doc Generator</div>
+          <div class="sdl-desc">Intake form → formatted PDF proposal in 30 seconds</div>
+        </div>
+        <div class="sdl-arrow">→</div>
+      </a>
+      <a href="https://solvaro-email-agent2-production.up.railway.app/test" target="_blank" class="solvaro-demo-link">
+        <div class="sdl-num">03</div>
+        <div class="sdl-info">
+          <div class="sdl-title">AI Email Agent</div>
+          <div class="sdl-desc">Reads, classifies, and replies to your inbox autonomously</div>
+        </div>
+        <div class="sdl-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <div class="section-label">Get in Touch</div>
+      <h2 class="section-title" style="font-size:52px;">Let's work<br>together.</h2>
+      <p style="font-size:15px;line-height:1.75;color:var(--muted);max-width:380px;margin-top:16px;">Open to ME, manufacturing, design, test/validation, and systems engineering roles in the Chicago area. Also available for AI automation projects.</p>
+    </div>
+    <div class="contact-right">
+      <a href="mailto:pj@eident.net" class="contact-link">
+        <div>
+          <span class="cl-label">Email</span>
+          <span class="cl-value">pj@eident.net</span>
+        </div>
+        <div class="cl-arrow">→</div>
+      </a>
+      <a href="https://calendly.com/pjeident/30min" target="_blank" class="contact-link">
+        <div>
+          <span class="cl-label">Schedule a Call</span>
+          <span class="cl-value">calendly.com/pjeident/30min</span>
+        </div>
+        <div class="cl-arrow">→</div>
+      </a>
+      <!-- Add LinkedIn URL when ready -->
+      <a href="#" class="contact-link" style="opacity:0.4;pointer-events:none;">
+        <div>
+          <span class="cl-label">LinkedIn</span>
+          <span class="cl-value">Add your LinkedIn URL</span>
+        </div>
+        <div class="cl-arrow">→</div>
+      </a>
+      <!-- Add GitHub URL when ready -->
+      <a href="#" class="contact-link" style="opacity:0.4;pointer-events:none;">
+        <div>
+          <span class="cl-label">GitHub</span>
+          <span class="cl-value">Add your GitHub URL</span>
+        </div>
+        <div class="cl-arrow">→</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">PJ<span>.</span>Eident</div>
+  <ul class="footer-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="https://eident-automation-website.vercel.app" target="_blank">Solvaro AI</a></li>
+    <li><a href="mailto:pj@eident.net">pj@eident.net</a></li>
+  </ul>
+  <span class="footer-copy">© 2026 PJ Eident · Chicago, IL</span>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.08 });
+
+document.querySelectorAll('.project-card, .stat-block, .solvaro-demo-link, .contact-link, .skills-col').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(14px)';
+  el.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
